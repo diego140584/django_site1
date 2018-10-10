@@ -31,9 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'salesite.apps.SalesiteConfig',
     'bootstrap4',
     'fa',
-    'salesite.apps.SalesiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
