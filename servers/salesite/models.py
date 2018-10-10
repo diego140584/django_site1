@@ -8,21 +8,21 @@ class Customer(models.Model):
     email = models.EmailField()
 
 class Server(models.Model):
-    customer = models.ForeignKey(Customers)
+    customer = models.ForeignKey(Customer)
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
 
 class PC(models.Model):
-    customer = models.ForeignKey(Customers)
+    customer = models.ForeignKey(Customer)
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
 
 class Laptop(models.Model):
-    customer = models.ForeignKey(Customers)
+    customer = models.ForeignKey(Customer)
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
