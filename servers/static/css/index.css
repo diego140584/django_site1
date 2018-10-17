@@ -1,0 +1,24 @@
+
+html,
+body {
+  height: 100%;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+img{
+    height: 200px;
+    border-radius: 4px;
+}
+
+.footer {
+    height: 100px;
+    background-color: black;
+}

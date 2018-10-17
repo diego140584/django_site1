@@ -1,7 +1,6 @@
 
 {% extends 'wrapper.html' %}
-{% load static %}
-
+{% load staticfiles %}
     {% block navbar %}
    <nav class="navbar  justify-content-center navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -67,4 +66,10 @@
 </div>
     {% endblock %}
 
-    {% block footer %}{% endblock %}
+{% block footer %}
+    <div class="container">
+    <div class="row bg-light bg-primary">
+
+    </div>
+    </div>
+{% endblock %}
