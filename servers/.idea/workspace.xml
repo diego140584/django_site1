@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8deec42e-ebfa-4298-ae37-67c9558ff9e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salesite/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/salesite/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salesite/templates/wrapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/salesite/templates/wrapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/server1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/server1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/server2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/server2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/server3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/server3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/server4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/server4.jpeg" afterDir="false" />
-    </list>
+    <list default="true" id="8deec42e-ebfa-4298-ae37-67c9558ff9e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +15,7 @@
     <session id="-1517861128">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
@@ -135,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/salesite/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+            <state relative-caret-position="1275">
+              <caret line="85" column="6" lean-forward="true" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -198,7 +189,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="26" />
     <option name="width" value="1280" />
     <option name="height" value="1000" />
@@ -340,7 +331,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1282" height="1005" extended-state="6" />
+    <frame x="-1" y="-1" width="1282" height="1005" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24797407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -467,8 +458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/salesite/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+        <state relative-caret-position="1275">
+          <caret line="85" column="6" lean-forward="true" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
         </state>
       </provider>
     </entry>
