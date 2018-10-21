@@ -10,7 +10,12 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form action="#">
+          {% csrf_token %}
+          <table>
+            {{ form }}
+          </table>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

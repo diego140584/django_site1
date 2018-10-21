@@ -1,7 +1,12 @@
 from django.shortcuts import render
-from django.http import request
+from .forms import LoginForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    logform = LoginForm()
+    context = {"form": logform}
+
+    return render(request, 'index.html', context)
+
+
