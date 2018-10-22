@@ -8,8 +8,8 @@ def index(request):
     if request.method == "POST":
         lf = LoginForm(request.POST)
         if lf.is_valid():
-            login = lf.cleaned_data("login")
-            return HttpResponse("<h1>Hello {}!</h1>".format(login))
+            log = lf.cleaned_data["login"]
+            return HttpResponse("<h1>Hello {}!</h1>".format(log))
 
         else:
             return HttpResponse("<h1>Invalid data!</h1>")
