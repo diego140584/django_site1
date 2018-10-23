@@ -12,6 +12,7 @@
       <div class="modal-body">
         <form action="{% url "salesite:index" %}" method="POST">
           {% csrf_token %}
+
           <table>
             {{ form }}
           </table>

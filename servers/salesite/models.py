@@ -3,12 +3,17 @@ import time
 
 # Create your models here.
 class Customer(models.Model):
-    customer = models.CharField(max_length=32)
-    contact = models.CharField(max_length=32)
+    name = models.CharField(max_length=64, null=True)
+    last_name = models.CharField(max_length=64, null=True)
+    gender = models.CharField(max_length=10, null=True)
+    birth = models.DateField(null=True)
+    role = models.CharField(max_length=32)
+    firm = models.CharField(max_length=32)
     phone = models.CharField(max_length=32)
     email = models.EmailField()
+    date_registration = models.DateTimeField(null=True)
     def __str__(self):
-        return ("{}".format(self.customer))
+        return ("{} {}".format(self.name, self.last_name))
 
 class Order(models.Model):
     date = models.DateField(time.asctime(time.localtime(time.time())))
