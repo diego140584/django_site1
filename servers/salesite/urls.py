@@ -7,4 +7,6 @@ app_name = 'salesite'
 urlpatterns = [
 
     path('', views.index, name='index'),
+    path('register/', views.regForm, name='register'),
+
 ]

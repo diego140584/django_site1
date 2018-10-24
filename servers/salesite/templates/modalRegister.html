@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{% url "salesite:index" %}" method="POST">
+        <form action="{% url "salesite:register" %}" method="POST">
           {% csrf_token %}
 
           <table>
@@ -21,7 +21,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <a href="{% url "salesite:register" %}" class="link-primary">Register</a>
+
+
       </div>
     </div>
   </div>

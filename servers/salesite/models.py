@@ -12,6 +12,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=32)
     email = models.EmailField()
     date_registration = models.DateTimeField(null=True)
+    password = models.CharField(max_length=32, null=True)
     def __str__(self):
         return ("{} {}".format(self.name, self.last_name))
 
