@@ -37,6 +37,14 @@ def regForm(request):
         return render(request, "modalRegister.html", context)
 
 
+def prices(request):
+    return render(request, "prices.html")
+
+
+def fedback(request):
+    return render(request, "fedback.html")
+
+
 
 
 
