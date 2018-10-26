@@ -12,8 +12,9 @@
     <title>Server's sale</title>
 </head>
 <body >
+
 <header>
-<div class="container" id="top-menu" style=" box-shadow: 1px 1px 3px gray;">
+<div class="container" id="top-menu">
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
   <a class="navbar-brand" href="#">Server's shop</a>
@@ -24,7 +25,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active" style="border-bottom: 2px solid #C50024">
-        <a class="nav-link" href="/" style="color: #C50024">Главная <span class="sr-only">(current)</span></a>
+        <a class="nav-link main-link" href="/" style="">Главная <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" >
         <a class="nav-link" href="{% url "salesite:prices" %}">Цены</a>
@@ -44,7 +45,10 @@
     </div>
 </div>
 </header>
+
 <main class="content">
+
+
 <div class="container-fluid">{% block carousel %}{% endblock %}</div>
 
 {% block content_prices %}{% endblock %}

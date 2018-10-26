@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 
+html, body {
+    height: 100%;
+}
+
 html, body, button {
 
     font-family: 'PT Sans Narrow', sans-serif;
 
+
 }
+
+.content {
+    height: 100%;
+}
+
 
 #block1 {
     margin-top: 50px;
@@ -19,6 +29,10 @@ html, body, button {
     height: 20%;
 }
 
+#block2 .container {
+    margin-top: 10px; max-height: 200px;
+}
+
 
 #block2 img {
 
@@ -29,13 +43,20 @@ img {
     max-height: 100%;
 }
 
-#top-menu{
+
+#top-menu {
     box-shadow: 1px 1px 3px gray;
 }
+
+
 
 #top-menu .tel {
     font-weight: bold; margin-right: 40px;
     margin-right: 40px;
+}
+
+#top-menu .tel:hover {
+color: red;
 }
 
 #top-menu .navbar-nav .active {
@@ -43,7 +64,15 @@ img {
 }
 
 #top-menu .navbar-nav .active a {
-    color: red;
+    color:#C50024;
+}
+
+#top-menu .navbar-nav .active a:hover {
+    color:red;
+}
+
+#top-menu .navbar-nav  a:hover {
+    color:black;
 }
 
 .content {
@@ -66,3 +95,6 @@ img {
   height: 100%;
 }
 
+footer {
+    background-color: royalblue;
+}
