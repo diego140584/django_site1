@@ -2,6 +2,7 @@
 
 html, body {
     height: 100%;
+    background-color:lightgrey;
 }
 
 html, body, button {
@@ -11,13 +12,17 @@ html, body, button {
 
 }
 
+nav{
+    border-bottom: 1px solid silver;
+}
+
 .content {
     height: 100%;
 }
 
 
 #block1 {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #block1 .text-main {
@@ -41,6 +46,11 @@ html, body, button {
 
 img {
     max-height: 100%;
+}
+
+#block1 .faceimg {
+    width: 40%;
+    height: auto;
 }
 
 
@@ -94,7 +104,21 @@ color: red;
   flex-direction: column;
   height: 100%;
 }
+.text-main {
+    text-align: center;
+    font-size: 1.5em;
+}
 
 footer {
     background-color: royalblue;
+    border-top: 1px solid silver;
+}
+.card {
+    margin: 5px;
+
+}
+
+.cardimg img {
+   width: 50%;
+    height: 50%;
 }

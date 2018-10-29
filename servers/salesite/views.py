@@ -30,7 +30,7 @@ def regForm(request):
             firm = regF.cleaned_data["firm"]
             phone = regF.cleaned_data["phone"]
             password = regF.cleaned_data["password"]
-            return HttpResponse("{0} {1} {2} {3} {4}!".format(name, last_name, gender, birth, firm, phone))
+            return HttpResponse("")
     else:
         Rform = RegForm()
         context = {"form": Rform}
