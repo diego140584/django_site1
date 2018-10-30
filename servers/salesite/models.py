@@ -3,16 +3,16 @@ import time
 
 # Create your models here.
 class Customer(models.Model):
-    name = models.CharField(max_length=64, null=True)
-    last_name = models.CharField(max_length=64, null=True)
+    name = models.CharField(max_length=64, db_index=True)
+    last_name = models.CharField(max_length=64,db_index=True)
     gender = models.CharField(max_length=10, null=True)
-    birth = models.DateField(null=True)
-    role = models.CharField(max_length=32)
-    firm = models.CharField(max_length=32)
+    birth = models.DateField(blank=True)
+    role = models.CharField(max_length=32, blank=True)
+    firm = models.CharField(max_length=32, blank=True)
     phone = models.CharField(max_length=32)
-    email = models.EmailField()
-    date_registration = models.DateTimeField(null=True)
-    password = models.CharField(max_length=32, null=True)
+    email = models.EmailField(max_length=64)
+    date_registration = models.DateTimeField(auto_now_add=True)
+    password = models.CharField(max_length=32)
     def __str__(self):
         return ("{} {}".format(self.name, self.last_name))
 
