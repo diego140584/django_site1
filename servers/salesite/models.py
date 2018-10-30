@@ -1,5 +1,4 @@
 from django.db import models
-import time
 from django.shortcuts import reverse
 
 # Create your models here.
@@ -25,6 +24,7 @@ class Server(models.Model):
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120, null=True)
+    image = models.ImageField(blank=True)
 
 
     def __str__(self):
@@ -40,6 +40,7 @@ class PC(models.Model):
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return ("{}".format(self.model_name))
@@ -53,6 +54,7 @@ class Laptop(models.Model):
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return ("{}".format(self.model_name))
