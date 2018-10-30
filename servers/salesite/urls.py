@@ -10,5 +10,6 @@ urlpatterns = [
     path('register/', views.regForm, name='register'),
     path('prices/', views.prices, name='prices'),
     path('fedback/', views.fedback, name='fedback'),
+    path('<int:id>/', views.showDev, name='showDev')
 
 ]

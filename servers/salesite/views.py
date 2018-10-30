@@ -45,6 +45,10 @@ def fedback(request):
     return render(request, "fedback.html")
 
 
+def showDev(request):
+    return HttpResponse("<h1>It works!")
+
+
 
 
 

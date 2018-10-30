@@ -1,5 +1,6 @@
 from django.db import models
 import time
+from django.shortcuts import reverse
 
 # Create your models here.
 class Customer(models.Model):
@@ -34,6 +35,9 @@ class Server(models.Model):
     def __str__(self):
         return ("{}".format(self.model_name))
 
+    def get_absolute_url(self):
+        return reverse("salesite:showDev", id=self.id)
+
 
 class PC(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT)
@@ -42,11 +46,17 @@ class PC(models.Model):
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
 
+    def get_absolute_url(self):
+        return reverse("salesite:showDev", id=self.id)
+
 class Laptop(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT)
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
+
+    def get_absolute_url(self):
+        return reverse("salesite:showDev", id=self.id)
 
 
