@@ -17,20 +17,15 @@ class Customer(models.Model):
     def __str__(self):
         return ("{} {}".format(self.name, self.last_name))
 
-class Order(models.Model):
-    date = models.DateField(time.asctime(time.localtime(time.time())))
-    customer = models.ForeignKey(Customer, on_delete= models.PROTECT)
-
-    def __str__(self):
-        return ("{}".format(self.id + " " + self.customer))
 
 
 class Server(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.PROTECT)
+
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120, null=True)
+
 
     def __str__(self):
         return ("{}".format(self.model_name))
@@ -40,23 +35,38 @@ class Server(models.Model):
 
 
 class PC(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.PROTECT)
+
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
+
+    def __str__(self):
+        return ("{}".format(self.model_name))
 
     def get_absolute_url(self):
         return reverse("salesite:showDev", id=self.id)
 
 class Laptop(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.PROTECT)
+
     model_name = models.CharField(max_length=32)
     quantity = models.IntegerField(default=0)
     date = models.DateField("date arrives")
     description = models.TextField(max_length=120)
 
+    def __str__(self):
+        return ("{}".format(self.model_name))
+
     def get_absolute_url(self):
         return reverse("salesite:showDev", id=self.id)
 
 
+class Order(models.Model):
+    date = models.DateTimeField(auto_now_add=True)
+    customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    servers = models.ManyToManyField(Server)
+    laptops = models.ManyToManyField(Laptop)
+    pcs = models.ManyToManyField(PC)
+
+    def __str__(self):
+        return ("{}".format(self.id + " " + self.customer))
