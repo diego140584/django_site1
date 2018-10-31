@@ -65,7 +65,7 @@ class Laptop(models.Model):
 
 class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
-    customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL)
     servers = models.ManyToManyField(Server)
     laptops = models.ManyToManyField(Laptop)
     pcs = models.ManyToManyField(PC)
