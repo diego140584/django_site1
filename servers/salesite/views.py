@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import LoginForm, RegForm
 from django.http import HttpResponse
+from salesite.models import *
 
 
 # Create your views here.
@@ -38,7 +39,9 @@ def regForm(request):
 
 
 def prices(request):
-    return render(request, "prices.html")
+    laptops = Laptop.objects.all()
+
+    return render(request, "prices.html", context={"devices": laptops})
 
 
 def fedback(request):

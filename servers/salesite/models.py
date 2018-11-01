@@ -20,9 +20,9 @@ class Customer(models.Model):
 
 class Server(models.Model):
 
-    model_name = models.CharField(max_length=32)
+    model_name = models.CharField(max_length=64)
     quantity = models.IntegerField(default=0)
-    date = models.DateField("date arrives")
+    date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120, null=True)
     image = models.ImageField(blank=True)
 
@@ -36,9 +36,9 @@ class Server(models.Model):
 
 class PC(models.Model):
 
-    model_name = models.CharField(max_length=32)
+    model_name = models.CharField(max_length=64)
     quantity = models.IntegerField(default=0)
-    date = models.DateField("date arrives")
+    date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120)
     image = models.ImageField(blank=True)
 
@@ -49,15 +49,14 @@ class PC(models.Model):
         return reverse("salesite:showDev", id=self.id)
 
 class Laptop(models.Model):
-
-    model_name = models.CharField(max_length=32)
+    name = models.CharField(max_length=64)
     quantity = models.IntegerField(default=0)
-    date = models.DateField("date arrives")
+    date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120)
     image = models.ImageField(blank=True)
 
     def __str__(self):
-        return ("{}".format(self.model_name))
+        return ("{}".format(self.name))
 
     def get_absolute_url(self):
         return reverse("salesite:showDev", id=self.id)
@@ -65,7 +64,7 @@ class Laptop(models.Model):
 
 class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     servers = models.ManyToManyField(Server)
     laptops = models.ManyToManyField(Laptop)
     pcs = models.ManyToManyField(PC)
