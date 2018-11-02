@@ -6,10 +6,10 @@ from . import views
 app_name = 'salesite'
 urlpatterns = [
 
-    path('', views.index, name='index'),
-    path('register/', views.regForm, name='register'),
-    path('prices/', views.prices, name='prices'),
+    path('', views.Index.as_view(), name='index'),
+    path('register/', views.RegForm.as_view(), name='register'),
+    path('prices/', views.Prices.as_view(), name='prices'),
     path('fedback/', views.fedback, name='fedback'),
-    path('<int:id>/', views.showDev, name='showDev')
+    path('<int:id>/', views.ShowDew.as_view(), name='showDev')
 
 ]
