@@ -3,6 +3,7 @@ from .forms import LoginForm, RegForm
 from django.http import HttpResponse
 from salesite.models import *
 from django.views.generic import View
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
