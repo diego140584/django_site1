@@ -119,6 +119,17 @@ footer {
 }
 
 .cardimg img {
-   width: 50%;
-    height: 50%;
+    width: 20%;
+    height:auto;
 }
+
+.is_overlay{ display: block; width: 100%; height: 100%; }
+
+#trailer {
+	position: relative;
+	top: 0; right: 0; bottom: 0; left: 0;
+	overflow: hidden;
+}
+
+
+

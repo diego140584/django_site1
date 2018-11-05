@@ -7,9 +7,10 @@ app_name = 'salesite'
 urlpatterns = [
 
     path('', views.Index.as_view(), name='index'),
-    path('register/', views.RegForm.as_view(), name='register'),
-    path('prices/', views.Prices.as_view(), name='prices'),
-    path('fedback/', views.fedback, name='fedback'),
-    path('<int:id>/', views.ShowDew.as_view(), name='showDev')
+    path('register/', views.regForm, name='register'),
+    path('prices_template/', views.PricesTemplate.as_view(), name='pricestemplate'),
+    path('fedback/', views.Fedback.as_view(), name='fedback'),
+    path('<int:id>/', views.ShowDew.as_view(), name='showDev'),
+    path("prices_laptop/", views.PricesLaptop.as_view(), name='priceslaptop'),
 
 ]

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <style>input[type=text], input[type=password]{border-radius: 4px}</style>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="servers, computers, laptops">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <title>Server's sale</title>
+</head>
+
+<body id="bodyprices">
+
+<header>
+<div class="container" id="top-menu">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-12">
+  <a class="navbar-brand" href="#">Server's shop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="border-bottom: 2px solid #C50024">
+        <a class="nav-link main-link" href="/" style="">Главная <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="{% url "salesite:pricestemplate" %}">Цены</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="{% url "salesite:fedback" %}">Отзывы</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" data-toggle="modal" data-target="#exampleModal">Вход/Регистрация</a>
+      </li>
+    </ul>
+      <a class="navbar-brand tel" href="+380505251918">+380505251918</a>
+      <button type="button" class="btn btn-outline-danger">Заказ звонка</button>
+
+  </div>
+</nav>
+    </div>
+</div>
+</header>
+
+<main class="content">
+
+
+
+
+{% block content_prices %}
+
+<div class="container" id="prices">
+<div class="row">
+    <div class="col" style="text-align: center; margin-top: 20px"><p>Все Техника прошла полный цикл тестирования. Данные конфигурации не являются окончательными, вы можете заказать желаемую конфигурацию у нас!</p>
+</div>
+</div>
+</div>
+
+    <div class="jumbotron">
+
+    <div class="row pricerow ">
+        <div class="col-sm-4">
+
+            <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Сервера</h5>
+        <p class="card-text"></p>
+
+          <div class="cardimg img-fluid"><img src="{% static "images/front_serv.jpg" %}"></div>
+
+        <a href="#" class="btn btn-outline-primary">Подробней</a>
+      </div>
+    </div>
+
+        </div>
+
+            <div class="col-sm-4">
+
+            <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ноутбуки</h5>
+        <p class="card-text"></p>
+
+          <div class="cardimg img-fluid"><img src="{% static "images/front_laptop.jpg" %}"></div>
+
+        <a href="{% url "salesite:priceslaptop" %}" class="btn btn-outline-primary">Подробней</a>
+      </div>
+    </div>
+
+        </div>
+
+            <div class="col-sm-4">
+
+            <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Компьютеры</h5>
+        <p class="card-text"></p>
+
+          <div class="cardimg img-fluid"><img src="{% static "images/Front_pc.jpg" %}"></div>
+
+        <a href="#" class="btn btn-outline-primary">Подробней</a>
+      </div>
+    </div>
+
+        </div>
+    </div>
+
+    </div>
+{% endblock %}
+</main>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+{% include "modalRegisterLogin.html" %}
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<footer>
+    {% block footer %}{% endblock %}
+</footer>
+
+</body>
+</html>
+
+
