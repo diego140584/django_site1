@@ -24,22 +24,22 @@ class Index(View):
 
 
 
-def regForm(request):
-    if request.method == "POST":
-        regF = RegForm(request.POST)
-        if regF.is_valid():
-            name = regF.cleaned_data["name"]
-            last_name = regF.cleaned_data["last_name"]
-            gender = regF.cleaned_data["gender"]
-            birth = regF.cleaned_data["birth"]
-            firm = regF.cleaned_data["firm"]
-            phone = regF.cleaned_data["phone"]
-            password = regF.cleaned_data["password"]
-            return HttpResponse("")
-    else:
-        Rform = RegForm()
-        context = {"form": Rform}
-        return render(request, "modalRegister.html", context)
+class RegForm(View):
+   def get(self, request):
+        regF = RegForm()
+        return render(request, "modalRegister.html", context={'form': regF})
+
+   def post(self, request):
+       regF = RegForm(request.POST)
+       if regF.is_valid():
+           name = regF.cleaned_data["name"]
+           last_name = regF.cleaned_data["last_name"]
+           gender = regF.cleaned_data["gender"]
+           birth = regF.cleaned_data["birth"]
+           firm = regF.cleaned_data["firm"]
+           phone = regF.cleaned_data["phone"]
+           password = regF.cleaned_data["password"]
+           return HttpResponse(name + " "  + last_name + " was registered." )
 
 
 class PricesTemplate(View):

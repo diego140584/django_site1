@@ -1,6 +1,7 @@
-
+{% extends 'wrapper.html' %}
 
 <!-- Modal -->
+{% block content_prices %}
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,12 +13,20 @@
       <div class="modal-body">
         <form action="{% url 'salesite:register' %}" method="POST">
           {% csrf_token %}
+            <table>
+                {{ form.name }}
+            {{ form.last_name }}
+            {{ form.gender }}
+            {{ form.birth }}
+            {{ form.firm }}
+            {{ form.phone }}
+            {{ form.email }}
+            {{ form.password }}
+            {{ form.re_password }}
+            </table>
 
-          <table>
-            {{ form }}
-          </table>
             <button type="submit" class="btn btn-primary ">Send</button>
-            <button type="reset" class="btn btn-secondary " data-dismiss="modal">Close</button>
+            <button type="reset" class="btn btn-secondary " data-dismiss="modal"><a href="/">Close</a></button>
         </form>
       </div>
       <div class="modal-footer">
@@ -26,3 +35,4 @@
       </div>
     </div>
   </div>
+{% endblock %}

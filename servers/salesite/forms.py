@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
+from django.core.exceptions import ValidationError
 
 
 
@@ -23,3 +24,11 @@ class RegForm(forms.Form):
     email = forms.EmailField(label="email", required=True)
     password = forms.CharField(widget=forms.PasswordInput, label="password", help_text="не меньше 8 символов", required=True, min_length=8)
     re_password = forms.CharField(widget=forms.PasswordInput, label="re password", help_text="Повторите ввод пароля", required = True, min_length=8)
+    name.widget.attrs.update({'class': 'form-control'})
+    last_name.widget.attrs.update({'class': 'form-control'})
+    gender.widget.attrs.update({'class': 'form-control'})
+    firm.widget.attrs.update({'class': 'form-control'})
+    phone.widget.attrs.update({'class': 'form-control'})
+    email.widget.attrs.update({'class': 'form-control'})
+    password.widget.attrs.update({'class': 'form-control'})
+    re_password.widget.attrs.update({'class': 'form-control'})
