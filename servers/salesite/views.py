@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import LoginForm, RegForm
+from .forms import LoginForm, RForm
 from django.http import HttpResponse
 from salesite.models import *
 from django.views.generic import View
@@ -8,26 +8,27 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class Index(View):
-    def get(self, request):
-        if request.method == "POST":
-            lf = LoginForm(request.POST)
-            if lf.is_valid():
-                log = lf.cleaned_data["login"]
-                return HttpResponse("<h1>Hello {}!</h1>".format(log))
 
-            else:
-                return HttpResponse("<h1>Invalid data!</h1>")
+    def get(self, request):
+        logForm = LoginForm()
+        return render(request, 'index.html', context={'form': logForm})
+
+    def post(self, request):
+        lf = LoginForm(request.POST)
+        if lf.is_valid():
+            log = lf.cleaned_data["login"]
+            return HttpResponse("<h1>Hello {}!</h1>".format(log))
         else:
-            logform = LoginForm()
-            context = {"form": logform}
-            return render(request, 'index.html', context)
+            return HttpResponse("<h1>Invalid data!</h1>")
+
 
 
 
 class RegForm(View):
+
    def get(self, request):
-        regF = RegForm()
-        return render(request, "modalRegister.html", context={'form': regF})
+        regForm = RForm()
+        return render(request, 'modalRegister.html', context={'regForm': regForm})
 
    def post(self, request):
        regF = RegForm(request.POST)
@@ -43,11 +44,13 @@ class RegForm(View):
 
 
 class PricesTemplate(View):
+
     def get(self, request):
         return render(request, "prices_template.html")
 
 
 class PricesLaptop(View):
+
     def get(self, request):
         laptops = Laptop.objects.all()
         return render(request, "prices_devices.html", context={"devices": laptops})
@@ -55,12 +58,14 @@ class PricesLaptop(View):
 
 
 class Fedback(View):
+
     def get(self, request):
         return render(request, "fedback.html")
 
 
 
 class ShowDew(View):
+
     def get(self, request):
         return HttpResponse(request, "<h1>It works!")
 

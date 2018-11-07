@@ -13,16 +13,9 @@
       <div class="modal-body">
         <form action="{% url 'salesite:register' %}" method="POST">
           {% csrf_token %}
+
             <table>
-                {{ form.name }}
-            {{ form.last_name }}
-            {{ form.gender }}
-            {{ form.birth }}
-            {{ form.firm }}
-            {{ form.phone }}
-            {{ form.email }}
-            {{ form.password }}
-            {{ form.re_password }}
+                {{ regForm }}
             </table>
 
             <button type="submit" class="btn btn-primary ">Send</button>

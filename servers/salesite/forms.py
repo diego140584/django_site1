@@ -13,7 +13,8 @@ class LoginForm(forms.Form):
     required_css_class = "input[type=password]"
 
 
-class RegForm(forms.Form):
+
+class RForm(forms.Form):
 
     name = forms.CharField(label="name", required=True)
     last_name = forms.CharField(label="last name", required=True)
