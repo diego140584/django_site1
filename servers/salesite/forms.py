@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
+from  salesite.models import Customer
 from django.core.exceptions import ValidationError
 
 
@@ -14,22 +15,25 @@ class LoginForm(forms.Form):
 
 
 
-class RForm(forms.Form):
+class RForm(forms.ModelForm):
 
-    name = forms.CharField(label="name", required=True)
-    last_name = forms.CharField(label="last name", required=True)
-    gender = forms.CharField(label="gender", required=True)
-    birth = forms.DateField(label="birth date", widget=AdminDateWidget, required=True)
-    firm = forms.CharField(label="firm", required=True)
-    phone = forms.CharField(label="phone", required=True)
-    email = forms.EmailField(label="email", required=True)
-    password = forms.CharField(widget=forms.PasswordInput, label="password", help_text="не меньше 8 символов", required=True, min_length=8)
-    re_password = forms.CharField(widget=forms.PasswordInput, label="re password", help_text="Повторите ввод пароля", required = True, min_length=8)
-    name.widget.attrs.update({'class': 'form-control'})
-    last_name.widget.attrs.update({'class': 'form-control'})
-    gender.widget.attrs.update({'class': 'form-control'})
-    firm.widget.attrs.update({'class': 'form-control'})
-    phone.widget.attrs.update({'class': 'form-control'})
-    email.widget.attrs.update({'class': 'form-control'})
-    password.widget.attrs.update({'class': 'form-control'})
-    re_password.widget.attrs.update({'class': 'form-control'})
+    class Meta:
+        model = Customer
+        fields = ['name', 'last_name', 'login', 'gender',  'birth', 'firm',
+                  'phone', 'email', 'password', 'password']
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'login': forms.TextInput(attrs={'class': 'form-control'}),
+            'gender': forms.TextInput(attrs={'class': 'form-control'}),
+            'birth': forms.SelectDateWidget(attrs={'class': 'form-control'}),
+            'firm': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.NumberInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control'}),
+
+
+        }
+
+

@@ -4,10 +4,10 @@ from django.shortcuts import reverse
 # Create your models here.
 class Customer(models.Model):
     name = models.CharField(max_length=64, db_index=True)
-    last_name = models.CharField(max_length=64,db_index=True)
+    last_name = models.CharField(max_length=64, db_index=True,)
+    login = models.CharField(max_length=32, db_index=True, null=True)
     gender = models.CharField(max_length=10, null=True)
     birth = models.DateField(blank=True)
-    role = models.CharField(max_length=32, blank=True)
     firm = models.CharField(max_length=32, blank=True)
     phone = models.CharField(max_length=32)
     email = models.EmailField(max_length=64)
@@ -21,6 +21,7 @@ class Customer(models.Model):
 class Server(models.Model):
 
     model_name = models.CharField(max_length=64)
+    cost = models.FloatField(null=True)
     quantity = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120, null=True)
@@ -37,6 +38,7 @@ class Server(models.Model):
 class PC(models.Model):
 
     model_name = models.CharField(max_length=64)
+    cost = models.FloatField(null=True)
     quantity = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120)
@@ -50,6 +52,7 @@ class PC(models.Model):
 
 class Laptop(models.Model):
     name = models.CharField(max_length=64)
+    cost = models.FloatField(null=True)
     quantity = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120)
