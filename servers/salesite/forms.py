@@ -33,8 +33,9 @@ class RForm(forms.ModelForm):
     def save(self):
 
         try:
-            if Customer.objects.get(name__exact=self.cleaned_data['name']) == self.cleaned_data['name'] or
-                Customer.objects.get(email__exact=self.cleaned_data['email']) == self.cleaned_data['email']
+            if Customer.objects.get(name__exact=self.cleaned_data['name']) == self.cleaned_data['name'] or \
+            Customer.objects.get(email__exact=self.cleaned_data['email']) == self.cleaned_data['email']:
+                pass
 
         except:
             raise ValidationError("Customer couldnt be created!")
