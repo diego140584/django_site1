@@ -3,7 +3,7 @@ from .forms import LoginForm, RForm
 from django.http import HttpResponse
 from salesite.models import *
 from django.views.generic import View
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 
 # Create your views here.
@@ -31,16 +31,12 @@ class RegForm(View):
         return render(request, 'modalRegister.html', context={'regForm': regForm})
 
    def post(self, request):
-       regF = RegForm(request.POST)
+       regF = RForm(request.POST)
        if regF.is_valid():
-           name = regF.cleaned_data["name"]
-           last_name = regF.cleaned_data["last_name"]
-           gender = regF.cleaned_data["gender"]
-           birth = regF.cleaned_data["birth"]
-           firm = regF.cleaned_data["firm"]
-           phone = regF.cleaned_data["phone"]
-           password = regF.cleaned_data["password"]
-           return HttpResponse(name + " "  + last_name + " was registered." )
+           regF.save()
+           return redirect(regF)
+       else:
+           return render(request, 'modalRegister.html', context={'regForm': regF})
 
 
 class PricesTemplate(View):

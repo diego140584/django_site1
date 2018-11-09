@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
 from salesite.models import Customer
 from django.core.exceptions import ValidationError
+from django.shortcuts import get_object_or_404
 
 
 class LoginForm(forms.Form):
