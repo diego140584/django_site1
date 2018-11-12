@@ -1,7 +1,13 @@
 from django.db import models
 from django.shortcuts import reverse
+from django.contrib.auth import get_user_model
+
+
 
 # Create your models here.
+usr = get_user_model()
+
+
 class Customer(models.Model):
     name = models.CharField(max_length=64, db_index=True)
     last_name = models.CharField(max_length=64, db_index=True,)
@@ -13,6 +19,11 @@ class Customer(models.Model):
     email = models.EmailField(max_length=64)
     date_registration = models.DateTimeField(auto_now_add=True)
     password = models.CharField(max_length=32)
+
+    class Meta:
+        verbose_name = "Customer"
+        verbose_name_plural = "Customers"
+
 
     def __str__(self):
         return ("{} {}".format(self.name, self.last_name))
@@ -27,6 +38,11 @@ class Server(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     description = models.TextField(max_length=120, null=True)
     image = models.ImageField(blank=True)
+
+
+    class Meta:
+        verbose_name = "Server"
+        verbose_name_plural = "Servers"
 
 
     def __str__(self):
@@ -45,6 +61,11 @@ class PC(models.Model):
     description = models.TextField(max_length=120)
     image = models.ImageField(blank=True)
 
+
+    class Meta:
+        verbose_name = "PC"
+        verbose_name_plural = "PC's"
+
     def __str__(self):
         return ("{}".format(self.model_name))
 
@@ -59,6 +80,10 @@ class Laptop(models.Model):
     description = models.TextField(max_length=120)
     image = models.ImageField(blank=True)
 
+    class Meta:
+        verbose_name = "Laptop"
+        verbose_name_plural = "Laptops"
+
     def __str__(self):
         return ("{}".format(self.name))
 
@@ -72,6 +97,10 @@ class Order(models.Model):
     servers = models.ManyToManyField(Server)
     laptops = models.ManyToManyField(Laptop)
     pcs = models.ManyToManyField(PC)
+
+    class Meta:
+        verbose_name = "Order"
+        verbose_name_plural = "Orders"
 
     def __str__(self):
         return ("{}".format(self.id + " " + self.customer))

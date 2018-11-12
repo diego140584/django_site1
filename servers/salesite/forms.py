@@ -34,26 +34,24 @@ class RForm(forms.ModelForm):
     def save(self):
 
         try:
-            if Customer.objects.get(name__exact=self.cleaned_data['name']) == self.cleaned_data['name'] or \
-            Customer.objects.get(email__exact=self.cleaned_data['email']) == self.cleaned_data['email']:
-                pass
+            cs = Customer.objects.all()
+            if self.cleaned_data['email'] in cs:
+                raise ValidationError
+            else:
+                obj = Customer.objects.create(
+                    name=self.cleaned_data['name'],
+                    last_name=self.cleaned_data['last_name'],
+                    login=self.cleaned_data['login'],
+                    gender=self.cleaned_data['gender'],
+                    birth=self.cleaned_data['birth'],
+                    firm=self.cleaned_data['firm'],
+                    phone=self.cleaned_data['phone'],
+                    email=self.cleaned_data['email'],
+                    password=self.cleaned_data['password'],
 
+                )
+                return obj
         except:
-            raise ValidationError("Customer couldnt be created!")
-
-        else:
-            obj = Customer.objects.create(
-                name=self.cleaned_data['name'],
-                last_name=self.cleaned_data['last_name'],
-                login=self.cleaned_data['login'],
-                gender=self.cleaned_data['gender'],
-                birth=self.cleaned_data['birth'],
-                firm=self.cleaned_data['firm'],
-                phone=self.cleaned_data['phone'],
-                email=self.cleaned_data['email'],
-                password=self.cleaned_data['password'],
-
-            )
-            return obj
+           print('User exist')
 
 
