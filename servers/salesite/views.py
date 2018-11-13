@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from salesite.models import *
 from django.views.generic import View
 from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -39,13 +40,13 @@ class RegForm(View):
            return render(request, 'modalRegister.html', context={'regForm': regF})
 
 
-class PricesTemplate(View):
+class PricesTemplate(LoginRequiredMixin, View):
 
     def get(self, request):
         return render(request, "prices_template.html")
 
 
-class PricesLaptop(View):
+class PricesLaptop(LoginRequiredMixin, View):
 
     def get(self, request):
         laptops = Laptop.objects.all()
@@ -53,7 +54,7 @@ class PricesLaptop(View):
 
 
 
-class Fedback(View):
+class Fedback(LoginRequiredMixin, View):
 
     def get(self, request):
         return render(request, "fedback.html")

@@ -32,12 +32,12 @@ class Customer(models.Model):
 
 class Server(models.Model):
 
-    model_name = models.CharField(max_length=64)
-    cost = models.FloatField(null=True)
-    quantity = models.IntegerField(default=0)
-    date = models.DateTimeField(auto_now_add=True)
-    description = models.TextField(max_length=120, null=True)
-    image = models.ImageField(blank=True)
+    model_name = models.CharField(max_length=64, verbose_name='Name')
+    cost = models.FloatField(null=True,verbose_name="Price")
+    quantity = models.IntegerField(default=0,verbose_name="Quantity")
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
+    description = models.TextField(max_length=120, null=True, verbose_name='Description')
+    image = models.ImageField(blank=True, verbose_name='Image')
 
 
     class Meta:
