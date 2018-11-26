@@ -40,13 +40,13 @@ class RegForm(View):
            return render(request, 'modalRegister.html', context={'regForm': regF})
 
 
-class PricesTemplate(LoginRequiredMixin, View):
+class PricesTemplate(View):
 
     def get(self, request):
         return render(request, "prices_template.html")
 
 
-class PricesLaptop(LoginRequiredMixin, View):
+class PricesLaptop(View):
 
     def get(self, request):
         laptops = Laptop.objects.all()
@@ -54,7 +54,7 @@ class PricesLaptop(LoginRequiredMixin, View):
 
 
 
-class Fedback(LoginRequiredMixin, View):
+class Fedback(View):
 
     def get(self, request):
         return render(request, "fedback.html")
