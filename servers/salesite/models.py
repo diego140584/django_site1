@@ -23,6 +23,7 @@ class Customer(models.Model):
     class Meta:
         verbose_name = "Customer"
         verbose_name_plural = "Customers"
+        ordering = ['-date_registration']
 
 
     def __str__(self):
@@ -43,6 +44,7 @@ class Server(models.Model):
     class Meta:
         verbose_name = "Server"
         verbose_name_plural = "Servers"
+        ordering = ['-date']
 
 
     def __str__(self):
@@ -65,6 +67,7 @@ class PC(models.Model):
     class Meta:
         verbose_name = "PC"
         verbose_name_plural = "PC's"
+        ordering = ['-date']
 
     def __str__(self):
         return ("{}".format(self.model_name))
@@ -83,6 +86,7 @@ class Laptop(models.Model):
     class Meta:
         verbose_name = "Laptop"
         verbose_name_plural = "Laptops"
+        ordering = ['-date']
 
     def __str__(self):
         return ("{}".format(self.name))

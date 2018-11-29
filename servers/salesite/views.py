@@ -5,6 +5,7 @@ from salesite.models import *
 from django.views.generic import View
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -49,8 +50,10 @@ class PricesTemplate(View):
 class PricesLaptop(View):
 
     def get(self, request):
+        paginator = Paginator(Laptop, 3)
+        page = paginator.get_page(1)
         laptops = Laptop.objects.all()
-        return render(request, "prices_devices.html", context={"devices": laptops})
+        return render(request, "prices_devices.html", context={"devices": page.object_list})
 
 
 
