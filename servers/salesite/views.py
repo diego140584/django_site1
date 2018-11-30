@@ -50,10 +50,29 @@ class PricesTemplate(View):
 class PricesLaptop(View):
 
     def get(self, request):
-        paginator = Paginator(Laptop, 3)
-        page = paginator.get_page(1)
-        laptops = Laptop.objects.all()
+
+        laptop = Laptop.objects.all()
+        paginator = Paginator(laptop, 8)
+        page_number = self.request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
         return render(request, "prices_devices.html", context={"devices": page.object_list})
+
+class PricesPC(View):
+    def get(self, request):
+        pc = PC.objects.all()
+        paginator = Paginator(pc, 8)
+        page_number = self.request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
+        return render(request,'prices_devices.html', context={'devices': page.object_list})
+
+
+class PricesServer(View):
+    def get(self, request):
+        server = Server.objects.all()
+        paginator = Paginator(server, 8)
+        page_number = self.request.GET.get('page', 1)
+        page = paginator.get_page(page_number)
+        return render(request,'prices_devices.html', context={'devices': page.object_list})
 
 
 
