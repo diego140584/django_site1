@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8deec42e-ebfa-4298-ae37-67c9558ff9e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salesite/templates/prices_devices.html" beforeDir="false" afterPath="$PROJECT_DIR$/salesite/templates/prices_devices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salesite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/salesite/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +17,9 @@
     <session id="-1517861128">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="163" />
+          <entry key="project.closed" value="164" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.10" value="20" />
+          <entry key="project.open.time.10" value="21" />
           <entry key="project.open.time.109" value="1" />
           <entry key="project.open.time.11" value="10" />
           <entry key="project.open.time.113" value="1" />
@@ -54,7 +52,7 @@
           <entry key="project.open.time.72" value="1" />
           <entry key="project.open.time.8" value="28" />
           <entry key="project.open.time.9" value="30" />
-          <entry key="project.opened" value="165" />
+          <entry key="project.opened" value="166" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -148,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salesite/templates/prices_devices.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="720">
               <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
             </state>
           </provider>
@@ -176,7 +174,7 @@
         <entry file="file://$PROJECT_DIR$/salesite/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -388,7 +386,7 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5005714" side_tool="true" weight="0.2893031" />
       <window_info id="Favorites" order="1" sideWeight="0.5005714" side_tool="true" weight="0.2893031" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49942857" visible="true" weight="0.37763372" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49942857" visible="true" weight="0.23743922" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32914287" />
@@ -625,6 +623,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/salesite/templates/prices_devices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/salesite/templates/wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -646,17 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/salesite/templates/prices_devices.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/salesite/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
