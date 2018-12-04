@@ -52,10 +52,28 @@ class PricesLaptop(View):
     def get(self, request):
 
         laptop = Laptop.objects.all()
-        paginator = Paginator(laptop, 3)
+        paginator = Paginator(laptop, 8)
         page_number = self.request.GET.get('page', 1)
         page = paginator.get_page(page_number)
-        return render(request, "prices_devices.html", context={"devices": page})
+        has_pages = page.has_other_pages()
+        if page.has_previous():
+            prew_page = '?page={}'.format(page.previous_page_number())
+        else:
+            prew_page = ''
+
+        if page.has_next():
+            next_page = '?page={}'.format(page.next_page_number())
+        else:
+            next_page = ''
+
+        pages = {
+            'page': page,
+            'has': has_pages,
+            'preview': prew_page,
+            'next': next_page
+        }
+
+        return render(request, "prices_devices.html", context=pages)
 
 class PricesPC(View):
     def get(self, request):

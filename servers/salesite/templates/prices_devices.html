@@ -11,7 +11,7 @@
     <div class="container" style="text-align: center; background-image: url('{%static "images/server_back.jpg"  %}');">
 
     <div class="row pricerow ">
-        {% for device in devices %}
+        {% for device in page %}
         <div class="col-sm-4">
 
             <div class="card">
@@ -31,32 +31,35 @@
     </div>
     </div>
 
+{% if has %}
     <div>
     <nav aria-label="...">
   <ul class="pagination">
-    <li class="page-item disabled">
-      <span class="page-link">Previous</span>
+    <li class="page-item {% if not preview %} disabled {% endif %}">
+        <a class="page-link" href="{{ preview }}" tabindex="-1">previous</a>
     </li>
 
-    {% for n in devices.paginator.page_range %}
+    {% for n in page.paginator.page_range %}
 
-        {% if devices.number == n %}
+        {% if page.number == n %}
     <li class="page-item active">
    <a href="?page={{ n }}">{{ n }}
         <span class="sr-only">(current)</span></a>
     </li>
 
-        {% else %}
+        {% elif n > page.number|add: -3 and n < page.number|add: 3 %}
         <li class="page-item">
             <a href="?page={{ n }}">{{ n }}</a>
         </li>
         {% endif %}
     {% endfor %}
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
+    <li class="page-item {% if not next %} disabled {% endif %}" >
+      <a class="page-link" href="{{ next }}" tabindex="-1">Next</a>
     </li>
   </ul>
 </nav>
 </div>
+{% endif %}
+
 
 {% endblock %}
