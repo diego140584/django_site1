@@ -11,12 +11,12 @@
     <div class="container" style="text-align: center; background-image: url('{%static "images/server_back.jpg"  %}');">
 
     <div class="row pricerow ">
-        {% for device in page %}
+        {% for device in page.object_list %}
         <div class="col-sm-4">
 
             <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ device.name}}</h5>
+        <h5 class="card-title">{{ device.name }}</h5>
         <p class="card-text">{{ device.description}}</p>
 
           <div class="cardimg img-fluid"><img src="{{ device.image.url }}" alt="{{ device.image }}"></div>
@@ -59,7 +59,8 @@
   </ul>
 </nav>
 </div>
-{% endif %}
+    {% endif %}
+
 
 
 {% endblock %}
