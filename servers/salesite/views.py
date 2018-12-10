@@ -52,7 +52,7 @@ class PricesLaptop(View):
     def get(self, request):
 
         laptop = Laptop.objects.all()
-        paginator = Paginator(laptop, 8)
+        paginator = Paginator(laptop, 3)
         page_number = self.request.GET.get('current_page', 1)
         current_page = paginator.get_page(page_number)
         has_pages = current_page.has_other_pages()
@@ -65,13 +65,17 @@ class PricesLaptop(View):
             next_page = '?current_page={}'.format(current_page.next_page_number())
         else:
             next_page = ''
-
+        count = paginator.page_range.__len__()
+        print('count-', count)
         pages = {
+            'pg': paginator,
             'page': current_page,
             'has': has_pages,
             'preview': prew_page,
-            'next': next_page
+            'next': next_page,
+            'count':count,
         }
+
 
 
         return render(request, "prices_devices.html", context=pages)
@@ -79,7 +83,7 @@ class PricesLaptop(View):
 class PricesPC(View):
     def get(self, request):
         pc = PC.objects.all()
-        paginator = Paginator(pc, 3)
+        paginator = Paginator(pc, 2)
         page_number = self.request.GET.get('page', 1)
         page = paginator.get_page(page_number)
         return render(request, 'prices_devices.html', context={'devices': page})

@@ -1,0 +1,27 @@
+
+    <nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item {% if not preview %} disabled {% endif %}">
+        <a class="page-link" href="{{ preview }}" tabindex="-1">previous</a>
+    </li>
+        {% for n in pg.page_range %}
+                {% if page.number == n %}
+
+    <li class="page-item active">
+   <a href="?page={{ n }}">{{ n }}
+        <span class="sr-only">(current)</span></a>
+    </li>
+
+      {% else %}
+        <li class="page-item">
+            <a href="?page={{ n }}">{{ n }}</a>
+        </li>
+
+        {% endif %}
+
+    {% endfor %}
+    <li class="page-item {% if not next %} disabled {% endif %}" >
+      <a class="page-link" href="{{ next }}" tabindex="-1">Next</a>
+    </li>
+  </ul>
+</nav>

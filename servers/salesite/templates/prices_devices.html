@@ -12,6 +12,7 @@
 
     <div class="row pricerow ">
         {% for device in page.object_list %}
+
         <div class="col-sm-4">
 
             <div class="card">
@@ -32,35 +33,13 @@
     </div>
 
 {% if has %}
-    <div>
-    <nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item {% if not preview %} disabled {% endif %}">
-        <a class="page-link" href="{{ preview }}" tabindex="-1">previous</a>
-    </li>
 
-    {% for n in page.paginator.page_range %}
-
-        {% if page.number == n %}
-    <li class="page-item active">
-   <a href="?page={{ n }}">{{ n }}
-        <span class="sr-only">(current)</span></a>
-    </li>
-
-        {% elif n > page.number|add: -3 and n < page.number|add: 3 %}
-        <li class="page-item">
-            <a href="?page={{ n }}">{{ n }}</a>
-        </li>
+    {% if count > 3 %}
+        {% include 'include/count1.html' %}
+        {% elif count < 4 %}
+        {% include 'include/count2.html' %}
         {% endif %}
-    {% endfor %}
-    <li class="page-item {% if not next %} disabled {% endif %}" >
-      <a class="page-link" href="{{ next }}" tabindex="-1">Next</a>
-    </li>
-  </ul>
-</nav>
-</div>
+
     {% endif %}
-
-
 
 {% endblock %}
