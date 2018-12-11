@@ -56,6 +56,7 @@ class PricesLaptop(View):
         page_number = self.request.GET.get('current_page', 1)
         current_page = paginator.get_page(page_number)
         has_pages = current_page.has_other_pages()
+        search_query = self.request.GET.get('search', '')
         if current_page.has_previous():
             prew_page = '?current_page={}'.format(current_page.previous_page_number())
         else:
