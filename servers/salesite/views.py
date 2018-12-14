@@ -46,7 +46,7 @@ class PricesTemplate(View):
     def get(self, request):
         return render(request, "prices_template.html")
 
-
+# to fix it on weekend
 class PricesLaptop(View):
 
     def get(self, request):
