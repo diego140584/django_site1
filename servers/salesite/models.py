@@ -13,7 +13,7 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=64, db_index=True,)
     login = models.CharField(max_length=32, db_index=True, null=True)
     gender = models.CharField(max_length=10, null=True)
-    birth = models.DateField(blank=True)
+    birth = models.DateField(blank=True,auto_now_add=False)
     firm = models.CharField(max_length=32, blank=True)
     phone = models.CharField(max_length=32)
     email = models.EmailField(max_length=64)
